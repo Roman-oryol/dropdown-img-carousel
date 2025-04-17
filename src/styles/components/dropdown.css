@@ -1,0 +1,71 @@
+.dropdown {
+  position: relative;
+  width: 160px;
+  text-align: center;
+}
+
+.dropdown button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: #ffffff;
+  background-color: #4a4a4a;
+  border: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  &:hover {
+    background-color: #3d3d3d;
+  }
+
+  &:active {
+    background-color: #333333;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  right: 0;
+  left: 0;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease,
+    visibility 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.dropdown-menu.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown-menu button {
+  &:hover {
+    background-color: #2c676a;
+  }
+}
+
+.dropdown-icon {
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+
+.dropdown:has(.visible) .dropdown-icon {
+  transform: rotate(180deg);
+}
